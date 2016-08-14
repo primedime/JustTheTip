@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4122F6E1C69428D0074932A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F6D1C69428D0074932A /* main.m */; };
+		C4122F711C69428D0074932A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F701C69428D0074932A /* AppDelegate.m */; };
+		C4122F771C69428D0074932A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4122F751C69428D0074932A /* Main.storyboard */; };
+		C4122F791C69428D0074932A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4122F781C69428D0074932A /* Assets.xcassets */; };
+		C4122F7C1C69428D0074932A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4122F7A1C69428D0074932A /* LaunchScreen.storyboard */; };
+		C4122F871C69428E0074932A /* JustTheTipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F861C69428E0074932A /* JustTheTipTests.m */; };
+		C4122F921C69428E0074932A /* JustTheTipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F911C69428E0074932A /* JustTheTipUITests.m */; };
+		C4122FA11C6942F90074932A /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122FA01C6942F90074932A /* TipViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4122F831C69428E0074932A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4122F611C69428D0074932A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4122F681C69428D0074932A;
+			remoteInfo = JustTheTip;
+		};
+		C4122F8E1C69428E0074932A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4122F611C69428D0074932A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4122F681C69428D0074932A;
+			remoteInfo = JustTheTip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4122F691C69428D0074932A /* JustTheTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustTheTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4122F6D1C69428D0074932A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4122F6F1C69428D0074932A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C4122F701C69428D0074932A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C4122F761C69428D0074932A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4122F781C69428D0074932A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4122F7B1C69428D0074932A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4122F7D1C69428D0074932A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4122F821C69428E0074932A /* JustTheTipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustTheTipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4122F861C69428E0074932A /* JustTheTipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustTheTipTests.m; sourceTree = "<group>"; };
+		C4122F881C69428E0074932A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4122F8D1C69428E0074932A /* JustTheTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustTheTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4122F911C69428E0074932A /* JustTheTipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JustTheTipUITests.m; sourceTree = "<group>"; };
+		C4122F931C69428E0074932A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4122F9F1C6942F90074932A /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
+		C4122FA01C6942F90074932A /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4122F661C69428D0074932A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F7F1C69428E0074932A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F8A1C69428E0074932A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4122F601C69428D0074932A = {
+			isa = PBXGroup;
+			children = (
+				C4122F6B1C69428D0074932A /* JustTheTip */,
+				C4122F851C69428E0074932A /* JustTheTipTests */,
+				C4122F901C69428E0074932A /* JustTheTipUITests */,
+				C4122F6A1C69428D0074932A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4122F6A1C69428D0074932A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4122F691C69428D0074932A /* JustTheTip.app */,
+				C4122F821C69428E0074932A /* JustTheTipTests.xctest */,
+				C4122F8D1C69428E0074932A /* JustTheTipUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4122F6B1C69428D0074932A /* JustTheTip */ = {
+			isa = PBXGroup;
+			children = (
+				C4122F6F1C69428D0074932A /* AppDelegate.h */,
+				C4122F701C69428D0074932A /* AppDelegate.m */,
+				C4122F9F1C6942F90074932A /* TipViewController.h */,
+				C4122FA01C6942F90074932A /* TipViewController.m */,
+				C4122F751C69428D0074932A /* Main.storyboard */,
+				C4122F781C69428D0074932A /* Assets.xcassets */,
+				C4122F7A1C69428D0074932A /* LaunchScreen.storyboard */,
+				C4122F7D1C69428D0074932A /* Info.plist */,
+				C4122F6C1C69428D0074932A /* Supporting Files */,
+			);
+			path = JustTheTip;
+			sourceTree = "<group>";
+		};
+		C4122F6C1C69428D0074932A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4122F6D1C69428D0074932A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4122F851C69428E0074932A /* JustTheTipTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4122F861C69428E0074932A /* JustTheTipTests.m */,
+				C4122F881C69428E0074932A /* Info.plist */,
+			);
+			path = JustTheTipTests;
+			sourceTree = "<group>";
+		};
+		C4122F901C69428E0074932A /* JustTheTipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4122F911C69428E0074932A /* JustTheTipUITests.m */,
+				C4122F931C69428E0074932A /* Info.plist */,
+			);
+			path = JustTheTipUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4122F681C69428D0074932A /* JustTheTip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4122F961C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTip" */;
+			buildPhases = (
+				C4122F651C69428D0074932A /* Sources */,
+				C4122F661C69428D0074932A /* Frameworks */,
+				C4122F671C69428D0074932A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JustTheTip;
+			productName = JustTheTip;
+			productReference = C4122F691C69428D0074932A /* JustTheTip.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4122F811C69428E0074932A /* JustTheTipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4122F991C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTipTests" */;
+			buildPhases = (
+				C4122F7E1C69428E0074932A /* Sources */,
+				C4122F7F1C69428E0074932A /* Frameworks */,
+				C4122F801C69428E0074932A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4122F841C69428E0074932A /* PBXTargetDependency */,
+			);
+			name = JustTheTipTests;
+			productName = JustTheTipTests;
+			productReference = C4122F821C69428E0074932A /* JustTheTipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4122F8C1C69428E0074932A /* JustTheTipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4122F9C1C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTipUITests" */;
+			buildPhases = (
+				C4122F891C69428E0074932A /* Sources */,
+				C4122F8A1C69428E0074932A /* Frameworks */,
+				C4122F8B1C69428E0074932A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4122F8F1C69428E0074932A /* PBXTargetDependency */,
+			);
+			name = JustTheTipUITests;
+			productName = JustTheTipUITests;
+			productReference = C4122F8D1C69428E0074932A /* JustTheTipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4122F611C69428D0074932A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Roy Jossfolk Inc.";
+				TargetAttributes = {
+					C4122F681C69428D0074932A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = AK9LT95PA7;
+					};
+					C4122F811C69428E0074932A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = AK9LT95PA7;
+						TestTargetID = C4122F681C69428D0074932A;
+					};
+					C4122F8C1C69428E0074932A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = AK9LT95PA7;
+						TestTargetID = C4122F681C69428D0074932A;
+					};
+				};
+			};
+			buildConfigurationList = C4122F641C69428D0074932A /* Build configuration list for PBXProject "JustTheTip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4122F601C69428D0074932A;
+			productRefGroup = C4122F6A1C69428D0074932A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4122F681C69428D0074932A /* JustTheTip */,
+				C4122F811C69428E0074932A /* JustTheTipTests */,
+				C4122F8C1C69428E0074932A /* JustTheTipUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4122F671C69428D0074932A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4122F7C1C69428D0074932A /* LaunchScreen.storyboard in Resources */,
+				C4122F791C69428D0074932A /* Assets.xcassets in Resources */,
+				C4122F771C69428D0074932A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F801C69428E0074932A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F8B1C69428E0074932A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4122F651C69428D0074932A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4122F711C69428D0074932A /* AppDelegate.m in Sources */,
+				C4122FA11C6942F90074932A /* TipViewController.m in Sources */,
+				C4122F6E1C69428D0074932A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F7E1C69428E0074932A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4122F871C69428E0074932A /* JustTheTipTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4122F891C69428E0074932A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4122F921C69428E0074932A /* JustTheTipUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4122F841C69428E0074932A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4122F681C69428D0074932A /* JustTheTip */;
+			targetProxy = C4122F831C69428E0074932A /* PBXContainerItemProxy */;
+		};
+		C4122F8F1C69428E0074932A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4122F681C69428D0074932A /* JustTheTip */;
+			targetProxy = C4122F8E1C69428E0074932A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4122F751C69428D0074932A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4122F761C69428D0074932A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4122F7A1C69428D0074932A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4122F7B1C69428D0074932A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4122F941C69428E0074932A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C4122F951C69428E0074932A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4122F971C69428E0074932A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JustTheTip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C4122F981C69428E0074932A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JustTheTip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C4122F9A1C69428E0074932A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JustTheTipTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustTheTip.app/JustTheTip";
+			};
+			name = Debug;
+		};
+		C4122F9B1C69428E0074932A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JustTheTipTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustTheTip.app/JustTheTip";
+			};
+			name = Release;
+		};
+		C4122F9D1C69428E0074932A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JustTheTipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JustTheTip;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C4122F9E1C69428E0074932A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JustTheTipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.royjossfolk.JustTheTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JustTheTip;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4122F641C69428D0074932A /* Build configuration list for PBXProject "JustTheTip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4122F941C69428E0074932A /* Debug */,
+				C4122F951C69428E0074932A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4122F961C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4122F971C69428E0074932A /* Debug */,
+				C4122F981C69428E0074932A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4122F991C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4122F9A1C69428E0074932A /* Debug */,
+				C4122F9B1C69428E0074932A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4122F9C1C69428E0074932A /* Build configuration list for PBXNativeTarget "JustTheTipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4122F9D1C69428E0074932A /* Debug */,
+				C4122F9E1C69428E0074932A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4122F611C69428D0074932A /* Project object */;
+}
