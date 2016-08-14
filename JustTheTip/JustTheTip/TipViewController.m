@@ -21,9 +21,9 @@
 
 @implementation TipViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
@@ -31,35 +31,37 @@
     // create and array for percentages
     self.tipPercentageArray = @[@0.15, @0.18, @0.20];
     
-    // remove tip percentage segements created in interface builder
-    while(self.percentSegments.numberOfSegments > 0) {
-        [self.percentSegments removeSegmentAtIndex:0 animated:NO];
-    }
-    
-    // use the array of percentages to populate the segmented controller
-    for (int i = 0; i < self.tipPercentageArray.count; i++) {
-        
-        NSNumber *numberInArray = self.tipPercentageArray[i];
-        
-        NSString *numberString = [NSString stringWithFormat:@"%.0f%%", numberInArray.doubleValue * 100];
-        
-        [self.percentSegments insertSegmentWithTitle:numberString atIndex:i animated:NO];
-        
-    }
-    
     // select one of the segments of the segment controller
     [self.percentSegments setSelectedSegmentIndex:0];
     
     //change bill amount text label so it is blank
     self.billAmountTextField.text = @"";
+    
+    [self addRecognizerToHideKeyboard];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)addRecognizerToHideKeyboard
+{
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+        action:@selector(hideKeyboard)];
+    
+    [self.view addGestureRecognizer:tapRecognizer];
 }
 
--(void)calculateTipAndUpdateLabels {
+- (IBAction)percentSegmentChanged:(id)sender
+{
+    [self hideKeyboard];
+    
+    [self calculateTipAndUpdateLabels];
+}
+
+- (IBAction)billAmountChanged:(id)sender
+{
+    [self calculateTipAndUpdateLabels];
+}
+
+-(void)calculateTipAndUpdateLabels
+{
     //get the NSNumber out of the array
     NSNumber *tipPercentageNumber = self.tipPercentageArray [[self.percentSegments selectedSegmentIndex]];
     
@@ -76,14 +78,9 @@
     self.totalAmountTextField.text = [NSString stringWithFormat:@"$%.2f", totalAmount];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)hideKeyboard
+{
+    [self.view endEditing:YES];
 }
-*/
 
 @end
