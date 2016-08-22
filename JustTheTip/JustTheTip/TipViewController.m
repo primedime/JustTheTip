@@ -52,6 +52,8 @@
     
     [self initializeColors];
     
+    [self.totalAmountTextField becomeFirstResponder];
+    
     self.peopleCount = 1;
 }
 
@@ -261,7 +263,7 @@
 -(void)updatePeopleLabelWithCount
 {
     self.peopleCountLabel.text = [NSString stringWithFormat:@"%d", self.peopleCount];
-    if (self.peopleCount < 9)
+    if (self.peopleCount < 10)
     {
         self.peopleCountLabel.text = [NSString stringWithFormat:@"0%d", self.peopleCount];
     }

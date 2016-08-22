@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustTheTip/TipViewController.m"
-            timestampString = "493529126.650098"
+            timestampString = "493529916.447998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-billAmountChanged:"
             landmarkType = "5">
          </BreakpointContent>
