@@ -8,8 +8,10 @@
 
 #import "SettingsViewController.h"
 #import "SettingCell.h"
+#import <MessageUI/MessageUI.h>
 
-@interface SettingsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SettingsViewController () <UITableViewDelegate, UITableViewDataSource,
+    MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
@@ -18,6 +20,9 @@
 
 @property (nonatomic, strong) NSString *royLinkedInURL;
 @property (nonatomic, strong) NSString *kevoyeLinkedInURL;
+
+@property (nonatomic, strong) NSString *shareText;
+@property (nonatomic, strong) NSString *appStoreReviewURL;
 
 @end
 
@@ -35,6 +40,10 @@
     [self initializeArrays];
     [self initializeLinkedInURLs];
     [self configureTableView];
+    
+    self.shareText = @"Give the right tip, quickly!";
+    self.appStoreReviewURL = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/"
+                             "wa/viewContentsUserReviews?type=Purple+Software&id=1136691499";
 }
 
 -(void)initializeArrays
@@ -106,6 +115,61 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    switch (indexPath.section)
+    {
+        // Review
+        case 0:
+            [self showReviewPage];
+            break;
+        
+        // Message
+        case 1:
+            [self showEmailView];
+            break;
+        
+        // Share
+        case 2:
+            [self showShareSheet];
+            break;
+    }
+}
+
+-(void)showReviewPage
+{
+    [self openURLNamed:self.appStoreReviewURL];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:true completion:nil];
+}
+
+-(void)showEmailView
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        NSString *iosVersion = [UIDevice currentDevice].systemVersion;
+        NSString *recipient = @"JustTheTip@gmail.com";
+        NSString *subject = [NSString stringWithFormat:@"JustTheTip Feedback %@", iosVersion];
+        
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        mailController.mailComposeDelegate = self;
+        mailController.title = @"JustTheTip Feedback";
+        [mailController setSubject:subject];
+        [mailController setToRecipients:@[recipient]];
+        
+        [self presentViewController:mailController animated:true completion:nil];
+    }
+}
+
+-(void)showShareSheet
+{
+    UIActivityViewController *activityController = [[UIActivityViewController alloc]
+        initWithActivityItems:@[self.shareText, self.appStoreReviewURL] applicationActivities:nil];
+    
+    [self presentViewController:activityController animated:true completion:nil];
 }
 
 -(IBAction)royButtonTapped:(UIButton *)royButton
