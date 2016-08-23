@@ -151,7 +151,7 @@
     if ([MFMailComposeViewController canSendMail])
     {
         NSString *iosVersion = [UIDevice currentDevice].systemVersion;
-        NSString *recipient = @"JustTheTip@gmail.com";
+        NSString *recipient = @"justthetip4ios@gmail.com";
         NSString *subject = [NSString stringWithFormat:@"JustTheTip Feedback %@", iosVersion];
         
         MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
