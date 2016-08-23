@@ -60,12 +60,25 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 2;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *spacingView = [[UIView alloc] init];
+    spacingView.backgroundColor = self.view.backgroundColor;
+    
+    return spacingView;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
@@ -73,12 +86,16 @@
 {
     SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingCell"];
     
-    cell.settingImage.image = self.settingImages[indexPath.row];
-    cell.titleLabel.text = self.settingTitles[indexPath.row];
+    cell.settingImage.image = self.settingImages[indexPath.section];
+    cell.titleLabel.text = self.settingTitles[indexPath.section];
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:true];
+}
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
