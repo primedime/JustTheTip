@@ -31,7 +31,7 @@
                                         <color key="textColor" red="0.93725490199999995" green="0.2901960784" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="natural" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="X11-eQ-8gV">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="X11-eQ-8gV">
                                         <rect key="frame" x="29" y="37" width="342" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="PTT-Zr-6Uv"/>
@@ -90,7 +90,7 @@
                                         <color key="textColor" red="0.93725490199999995" green="0.2901960784" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="natural" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="T4N-hO-stX">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="T4N-hO-stX">
                                         <rect key="frame" x="30" y="42" width="172" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="172" id="9Cx-y1-gL3"/>

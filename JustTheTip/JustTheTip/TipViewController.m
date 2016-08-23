@@ -26,6 +26,7 @@
 @property (strong, nonatomic) UIColor *purpleColor;
 @property (strong, nonatomic) UIColor *grayColor;
 @property (nonatomic) int peopleCount;
+@property (nonatomic) double billAmount;
 
 @end
 
@@ -35,6 +36,11 @@
 {
     [super viewDidLoad];
     
+    [self configure];
+}
+
+-(void)configure
+{
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
     
@@ -47,7 +53,7 @@
     [self addRecognizerToHideKeyboard];
     
     [self setDefaultTextInBillField];
-    self.prevBillAmountText = @"$0.0";
+    self.prevBillAmountText = @"$0.00";
     self.tipPercentage = 0.18;
     
     [self initializeColors];
@@ -55,6 +61,7 @@
     [self.totalAmountTextField becomeFirstResponder];
     
     self.peopleCount = 1;
+    self.billAmount = 0;
 }
 
 -(void)initializeColors
@@ -74,6 +81,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.billAmountTextField becomeFirstResponder];
+    [self calculateTipAndUpdateLabels];
 }
 
 - (IBAction)billAmountChanged:(UITextField *)textField
@@ -98,7 +106,7 @@
     }
     
     NSString *billAmountString = self.billAmountTextField.text;
-    self.billAmountTextField.text = [self formatNumberString: billAmountString];
+    self.billAmountTextField.text = [self formatBillAmountString: billAmountString];
     
     [self calculateTipAndUpdateLabels];
     
@@ -119,59 +127,42 @@
 
 -(void)setDefaultTextInBillField
 {
-    NSString *defaultText = @"$0.0";
+    NSString *defaultText = @"$0.00";
     self.billAmountTextField.text = defaultText;
 }
 
--(NSString *)formatNumberString:(NSString *)numberString
+-(NSString *)formatBillAmountString:(NSString *)billString
 {
-    NSMutableString *formattedString = [numberString stringByReplacingOccurrencesOfString:@","
-                                       withString:@""].mutableCopy;
-    if ([self wasBackspaceTappedInBillField])
+    double billValue = [self doubleValueFromBillField];
+    
+    if (![self wasBackspaceTappedInBillField])
     {
-        if ([formattedString hasPrefix:@"$0.0"])
-        {
-            return formattedString;
-        }
-        
-        if (numberString.length >= 4)
-        {
-            formattedString = [numberString stringByReplacingOccurrencesOfString:@"."
-                              withString:@""].mutableCopy;
-            
-            // Add decimal point
-            int decimalIndex = (int)(numberString.length - 3);
-            [formattedString insertString:@"." atIndex:decimalIndex];
-        }
-        
-        if (numberString.length == 4)
-        {
-            // Insert initial zero
-            formattedString = [formattedString stringByReplacingOccurrencesOfString:@"$."
-                              withString:@"$0."].mutableCopy;
-        }
-        
-        return formattedString;
+        billValue *= 10;
+    }
+    else
+    {
+        billValue /= 10;
     }
     
-    if (numberString.length > 5)
-    {
-        formattedString = [numberString stringByReplacingOccurrencesOfString:@"."
-                          withString:@""].mutableCopy;
-        
-        // Add decimal point
-        int decimalIndex = (int)(numberString.length - 3);
-        [formattedString insertString:@"." atIndex:decimalIndex];
-    }
+    NSNumber *billValueNumber = [NSNumber numberWithDouble:billValue];
+    return [[self currencyFormatter] stringFromNumber:billValueNumber];
+}
+
+-(double)doubleValueFromBillField
+{
+    NSString *billAmountString = self.billAmountTextField.text;
     
-    if (formattedString.length >= 6)
-    {
-        // Remove initial zero
-        formattedString = [formattedString stringByReplacingOccurrencesOfString:@"$0"
-                          withString:@"$"].mutableCopy;
-    }
+    NSNumber *billNumber = [[self currencyFormatter] numberFromString:billAmountString];
     
-    return formattedString;
+    return billNumber.doubleValue;
+}
+
+-(NSNumberFormatter *)currencyFormatter
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    
+    return formatter;
 }
 
 -(void)hideBillAmountTextFieldCursor
@@ -195,16 +186,6 @@
     //Update the labels in the view
     self.tipAmountTextField.text = [NSString stringWithFormat:@"$%.2f", tipAmount];
     self.totalAmountTextField.text = [NSString stringWithFormat:@"$%.2f", totalAmount];
-}
-
--(double)doubleValueFromBillField
-{
-    NSMutableString *doubleString = self.billAmountTextField.text.mutableCopy;
-    
-    doubleString = [doubleString stringByReplacingOccurrencesOfString:@"$"
-                   withString:@""].mutableCopy;
-    
-    return doubleString.doubleValue;
 }
 
 -(IBAction)fifteenPercentTapped:(UIButton *)button
