@@ -66,7 +66,7 @@
 
 -(void)initializeColors
 {
-    self.purpleColor = [UIColor colorWithRed:243.0/255.0 green:115.0/255.0 blue:255.0/255.0 alpha:1];
+    self.purpleColor = [UIColor colorWithRed:243.0/255.0 green:115.0/255 blue:255.0/255.0 alpha:1];
     self.grayColor = [UIColor colorWithRed:139.0/255.0 green:139.0/255.0 blue:139.0/255.0 alpha:1];
 }
 
@@ -268,6 +268,11 @@
 {
     [self.view endEditing:YES];
     [self showBillAmountTextFieldCursor];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

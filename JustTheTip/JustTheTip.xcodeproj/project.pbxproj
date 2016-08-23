@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50281E8B1D6BEAA300D5A0FA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50281E8A1D6BEAA300D5A0FA /* SettingsViewController.m */; };
+		50281E8E1D6BF3A200D5A0FA /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50281E8D1D6BF3A200D5A0FA /* SettingCell.m */; };
 		C4122F6E1C69428D0074932A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F6D1C69428D0074932A /* main.m */; };
 		C4122F711C69428D0074932A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4122F701C69428D0074932A /* AppDelegate.m */; };
 		C4122F771C69428D0074932A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4122F751C69428D0074932A /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50281E891D6BEAA300D5A0FA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		50281E8A1D6BEAA300D5A0FA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		50281E8C1D6BF3A200D5A0FA /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		50281E8D1D6BF3A200D5A0FA /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
 		C4122F691C69428D0074932A /* JustTheTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustTheTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4122F6D1C69428D0074932A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4122F6F1C69428D0074932A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				C4122F7A1C69428D0074932A /* LaunchScreen.storyboard */,
 				C4122F7D1C69428D0074932A /* Info.plist */,
 				C4122F6C1C69428D0074932A /* Supporting Files */,
+				50281E891D6BEAA300D5A0FA /* SettingsViewController.h */,
+				50281E8A1D6BEAA300D5A0FA /* SettingsViewController.m */,
+				50281E8C1D6BF3A200D5A0FA /* SettingCell.h */,
+				50281E8D1D6BF3A200D5A0FA /* SettingCell.m */,
 			);
 			path = JustTheTip;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 				C4122F711C69428D0074932A /* AppDelegate.m in Sources */,
 				C4122FA11C6942F90074932A /* TipViewController.m in Sources */,
 				C4122F6E1C69428D0074932A /* main.m in Sources */,
+				50281E8E1D6BF3A200D5A0FA /* SettingCell.m in Sources */,
+				50281E8B1D6BEAA300D5A0FA /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
