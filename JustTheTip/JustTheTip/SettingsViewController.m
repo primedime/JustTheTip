@@ -16,6 +16,9 @@
 @property (nonatomic, strong) NSMutableArray *settingTitles;
 @property (nonatomic, strong) NSMutableArray *settingImages;
 
+@property (nonatomic, strong) NSString *royLinkedInURL;
+@property (nonatomic, strong) NSString *kevoyeLinkedInURL;
+
 @end
 
 @implementation SettingsViewController
@@ -30,6 +33,7 @@
 -(void)configure
 {
     [self initializeArrays];
+    [self initializeLinkedInURLs];
     [self configureTableView];
 }
 
@@ -48,6 +52,13 @@
     [self.settingImages addObject:rateImage];
     [self.settingImages addObject:messageImage];
     [self.settingImages addObject:shareImage];
+}
+
+-(void)initializeLinkedInURLs
+{
+    self.kevoyeLinkedInURL = @"https://www.linkedin.com/in/kevoye-boswell-5376a7101";
+    self.royLinkedInURL = @"https://www.linkedin.com/in/royjossfolk";
+    
 }
 
 -(void)configureTableView
@@ -95,6 +106,23 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
+}
+
+-(IBAction)royButtonTapped:(UIButton *)royButton
+{
+    [self openURLNamed: self.royLinkedInURL];
+}
+
+-(IBAction)kevoyeButtonTapped:(UIButton *)kevoyeButton
+{
+    [self openURLNamed: self.kevoyeLinkedInURL];
+}
+
+-(void)openURLNamed:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
