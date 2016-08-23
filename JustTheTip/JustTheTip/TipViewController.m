@@ -52,13 +52,13 @@
     
     [self addRecognizerToHideKeyboard];
     
+    self.billAmountTextField.keyboardAppearance = UIKeyboardAppearanceDark;
     [self setDefaultTextInBillField];
+    
     self.prevBillAmountText = @"$0.00";
     self.tipPercentage = 0.18;
     
     [self initializeColors];
-    
-    [self.totalAmountTextField becomeFirstResponder];
     
     self.peopleCount = 1;
     self.billAmount = 0;
