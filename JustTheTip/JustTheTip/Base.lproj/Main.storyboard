@@ -49,21 +49,22 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc2-97-HJg">
-                                        <rect key="frame" x="343" y="4" width="24" height="24"/>
+                                        <rect key="frame" x="335" y="4" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="ULT-EQ-cVs"/>
-                                            <constraint firstAttribute="height" constant="24" id="cBh-bK-CX1"/>
+                                            <constraint firstAttribute="width" constant="40" id="ULT-EQ-cVs"/>
+                                            <constraint firstAttribute="height" constant="40" id="cBh-bK-CX1"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                         <state key="normal" image="settings"/>
                                         <connections>
-                                            <segue destination="24h-J8-pz7" kind="show" id="d4o-e9-Tt3"/>
+                                            <action selector="settingTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpV-dI-420"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6GQ-Zd-uv6"/>
-                                    <constraint firstAttribute="trailing" secondItem="qc2-97-HJg" secondAttribute="trailing" constant="8" id="Qls-Dx-23v"/>
+                                    <constraint firstAttribute="trailing" secondItem="qc2-97-HJg" secondAttribute="trailing" id="Qls-Dx-23v"/>
                                     <constraint firstItem="qc2-97-HJg" firstAttribute="top" secondItem="lM9-hE-QGf" secondAttribute="top" constant="4" id="WD3-vT-ZFk"/>
                                     <constraint firstItem="2Nd-3u-zaM" firstAttribute="leading" secondItem="lM9-hE-QGf" secondAttribute="leading" constant="8" id="XHj-FE-bra"/>
                                     <constraint firstItem="X11-eQ-8gV" firstAttribute="top" secondItem="2Nd-3u-zaM" secondAttribute="bottom" constant="8" id="ZiZ-tW-jVX"/>
@@ -306,7 +307,7 @@
         <!--Settings View Controller-->
         <scene sceneID="srv-PK-ZF5">
             <objects>
-                <viewController id="24h-J8-pz7" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="24h-J8-pz7" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X7b-2f-wqj"/>
                         <viewControllerLayoutGuide type="bottom" id="VEr-Ms-Vmp"/>

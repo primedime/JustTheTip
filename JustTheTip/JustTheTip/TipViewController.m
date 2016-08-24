@@ -28,8 +28,6 @@
 @property (nonatomic) int peopleCount;
 @property (nonatomic) double billAmount;
 
-@property (nonatomic) BOOL wasKeyboardShowing;
-
 @end
 
 @implementation TipViewController
@@ -66,6 +64,8 @@
     
     self.billAmountTextField.keyboardAppearance = UIKeyboardAppearanceDark;
     [self.billAmountTextField becomeFirstResponder];
+    
+    [self calculateTipAndUpdateLabels];
 }
 
 -(void)initializeColors
@@ -84,6 +84,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    self.billAmountTextField.keyboardAppearance = UIKeyboardAppearanceDark;
     [self calculateTipAndUpdateLabels];
 }
 
@@ -186,34 +187,38 @@
     double tipAmount = (billAmount * self.tipPercentage)/self.peopleCount;
     double totalAmount = (tipAmount + billAmount)/self.peopleCount;
     
+    NSNumber *tipAmountNumber = [NSNumber numberWithDouble:tipAmount];
+    NSNumber *totalAmountNumber = [NSNumber numberWithDouble:totalAmount];
+    
     //Update the labels in the view
-    self.tipAmountTextField.text = [NSString stringWithFormat:@"$%.2f", tipAmount];
-    self.totalAmountTextField.text = [NSString stringWithFormat:@"$%.2f", totalAmount];
+    self.tipAmountTextField.text = [[self currencyFormatter] stringFromNumber:tipAmountNumber];
+    self.totalAmountTextField.text = [[self currencyFormatter] stringFromNumber:totalAmountNumber];
 }
 
 -(IBAction)fifteenPercentTapped:(UIButton *)button
 {
-    self.tipPercentage = 0.15;
-    [self configurePercentageButtonColors];
-    [self hideKeyboard];
-    [self calculateTipAndUpdateLabels];
+    [self updateViewForTipAmount:0.15];
 }
 
 -(IBAction)eighteenPercentTapped:(UIButton *)button
 {
-    self.tipPercentage = 0.18;
-    [self configurePercentageButtonColors];
-    [self hideKeyboard];
-    [self calculateTipAndUpdateLabels];
+    [self updateViewForTipAmount:0.18];
 }
 
 
 -(IBAction)twentyPercentTapped:(UIButton *)button
 {
-    self.tipPercentage = 0.20;
+    [self updateViewForTipAmount:0.20];
+}
+
+-(void)updateViewForTipAmount:(double)tipAmount
+{
+    self.tipPercentage = tipAmount;
     [self configurePercentageButtonColors];
-    [self hideKeyboard];
+    [self showBillAmountTextFieldCursor];
     [self calculateTipAndUpdateLabels];
+    [self hideKeyboard];
+    [self showBillAmountTextFieldCursor];
 }
 
 -(IBAction)upButtonPressed:(UIButton *)button
@@ -227,6 +232,7 @@
     }
     
     [self calculateTipAndUpdateLabels];
+    [self showBillAmountTextFieldCursor];
     [self hideKeyboard];
 }
 
@@ -241,6 +247,7 @@
     }
     
     [self calculateTipAndUpdateLabels];
+    [self showBillAmountTextFieldCursor];
     [self hideKeyboard];
 }
 
@@ -270,12 +277,23 @@
 -(void)hideKeyboard
 {
     [self.view endEditing:YES];
-    [self showBillAmountTextFieldCursor];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+-(IBAction)settingTapped:(UIButton *)settingsButton
+{
+    [self.billAmountTextField resignFirstResponder];
+    
+    UIStoryboard *storyboad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *settingsController = [storyboad
+                      instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+    
+    [self presentViewController:settingsController animated:true completion:nil];
 }
 
 @end

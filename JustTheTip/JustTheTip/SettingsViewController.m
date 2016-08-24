@@ -108,8 +108,19 @@
     
     cell.settingImage.image = self.settingImages[indexPath.section];
     cell.titleLabel.text = self.settingTitles[indexPath.section];
+    cell.selectedBackgroundView = [self cellSelectedBackgroundView];
     
     return cell;
+}
+
+-(UIView *)cellSelectedBackgroundView
+{
+    UIView *selectionView = [[UIView alloc] init];
+    UIColor *selectionColor = [UIColor colorWithRed:39.0/255.0
+                                              green:39.0/255.0 blue:39.0/255.0 alpha:1];
+    selectionView.backgroundColor = selectionColor;
+    
+    return selectionView;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
