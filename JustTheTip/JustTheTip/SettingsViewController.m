@@ -182,6 +182,11 @@
     [self openURLNamed: self.kevoyeLinkedInURL];
 }
 
+-(IBAction)closeButtonTapped:(UIButton *)closeButton
+{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 -(void)openURLNamed:(NSString *)urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];

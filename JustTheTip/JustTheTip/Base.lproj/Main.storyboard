@@ -449,13 +449,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lO-0U-SdP">
+                                <rect key="frame" x="348" y="24" width="19" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Wi5-dA-2Xy"/>
+                                    <constraint firstAttribute="width" constant="19" id="h6n-5w-kRw"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="24h-J8-pz7" eventType="touchUpInside" id="apx-D6-NmX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VEr-Ms-Vmp" firstAttribute="top" secondItem="9BE-ck-r9V" secondAttribute="bottom" constant="8" id="61c-iC-cKp"/>
                             <constraint firstItem="9BE-ck-r9V" firstAttribute="centerX" secondItem="fDS-9P-Cej" secondAttribute="centerX" id="FcB-KN-6nQ"/>
+                            <constraint firstItem="6lO-0U-SdP" firstAttribute="top" secondItem="X7b-2f-wqj" secondAttribute="bottom" constant="4" id="HII-7o-x6K"/>
                             <constraint firstItem="ttA-Hy-k9b" firstAttribute="top" secondItem="2QT-Bo-zRQ" secondAttribute="bottom" constant="28" id="KNn-A9-DoM"/>
                             <constraint firstItem="ttA-Hy-k9b" firstAttribute="leading" secondItem="fDS-9P-Cej" secondAttribute="leading" id="NZc-ij-GWj"/>
+                            <constraint firstAttribute="trailing" secondItem="6lO-0U-SdP" secondAttribute="trailing" constant="8" id="S1E-2C-2sQ"/>
                             <constraint firstItem="2QT-Bo-zRQ" firstAttribute="top" secondItem="PkG-wd-Whl" secondAttribute="bottom" constant="8" id="UaT-lN-Sho"/>
                             <constraint firstItem="PkG-wd-Whl" firstAttribute="centerX" secondItem="fDS-9P-Cej" secondAttribute="centerX" id="ZNU-DO-PMS"/>
                             <constraint firstItem="2QT-Bo-zRQ" firstAttribute="centerX" secondItem="fDS-9P-Cej" secondAttribute="centerX" id="dIB-Nm-3Nh"/>
@@ -474,8 +487,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="19" height="22"/>
         <image name="down" width="19" height="11"/>
-        <image name="reviewIcon" width="27" height="21"/>
+        <image name="reviewIcon" width="32" height="26"/>
         <image name="settings" width="24" height="24"/>
         <image name="up" width="19" height="11"/>
     </resources>

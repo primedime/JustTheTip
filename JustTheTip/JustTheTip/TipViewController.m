@@ -28,6 +28,8 @@
 @property (nonatomic) int peopleCount;
 @property (nonatomic) double billAmount;
 
+@property (nonatomic) BOOL wasKeyboardShowing;
+
 @end
 
 @implementation TipViewController
@@ -52,7 +54,6 @@
     
     [self addRecognizerToHideKeyboard];
     
-    self.billAmountTextField.keyboardAppearance = UIKeyboardAppearanceDark;
     [self setDefaultTextInBillField];
     
     self.prevBillAmountText = @"$0.00";
@@ -62,6 +63,9 @@
     
     self.peopleCount = 1;
     self.billAmount = 0;
+    
+    self.billAmountTextField.keyboardAppearance = UIKeyboardAppearanceDark;
+    [self.billAmountTextField becomeFirstResponder];
 }
 
 -(void)initializeColors
@@ -80,7 +84,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self.billAmountTextField becomeFirstResponder];
     [self calculateTipAndUpdateLabels];
 }
 
