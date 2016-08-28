@@ -287,6 +287,7 @@
 -(IBAction)settingTapped:(UIButton *)settingsButton
 {
     [self.billAmountTextField resignFirstResponder];
+    [self showBillAmountTextFieldCursor];
     
     UIStoryboard *storyboad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     

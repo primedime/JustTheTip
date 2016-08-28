@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSString *shareText;
 @property (nonatomic, strong) NSString *appStoreReviewURL;
+@property (nonatomic, strong) NSString *appStoreURL;
 
 @end
 
@@ -41,9 +42,11 @@
     [self initializeLinkedInURLs];
     [self configureTableView];
     
-    self.shareText = @"Give the right tip, quickly!";
+    self.shareText = @"Give the right tip, quickly! Get JustTheTip App now.";
     self.appStoreReviewURL = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/"
-                             "wa/viewContentsUserReviews?type=Purple+Software&id=1136691499";
+                             "wa/viewContentsUserReviews?type=Purple+Software&id=1148351178";
+    self.appStoreURL = @"https://itunes.apple.com/app/id1148351178";
+    
 }
 
 -(void)initializeArrays
@@ -136,7 +139,7 @@
         
         // Message
         case 1:
-            [self showEmailView];
+            [self showEmailController];
             break;
         
         // Share
@@ -157,7 +160,7 @@
     [controller dismissViewControllerAnimated:true completion:nil];
 }
 
--(void)showEmailView
+-(void)showEmailController
 {
     if ([MFMailComposeViewController canSendMail])
     {
@@ -178,7 +181,7 @@
 -(void)showShareSheet
 {
     UIActivityViewController *activityController = [[UIActivityViewController alloc]
-        initWithActivityItems:@[self.shareText, self.appStoreReviewURL] applicationActivities:nil];
+        initWithActivityItems:@[self.shareText, self.appStoreURL] applicationActivities:nil];
     
     [self presentViewController:activityController animated:true completion:nil];
 }
